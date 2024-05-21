@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
       ready: true,
-      date: "Tuesday, 14:23",
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
       humidity: response.data.main.humidity,
       precipitation: response.data.rain,
       description: response.data.weather[0].description,
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
+      iconUrl: response.data.weather[0].icon,
     });
   }
 
@@ -46,7 +47,9 @@ export default function Weather() {
           <div className="col-6">
             <h1>{weatherData.city}</h1>
             <ul>
-              <li>{weatherData.date}</li>
+              <li>
+                <FormattedDate date={weatherData.date} />
+              </li>
               <li className="text-capitalize">{weatherData.description}</li>
             </ul>{" "}
           </div>
@@ -63,7 +66,7 @@ export default function Weather() {
           <img
             src={weatherData.iconUrl}
             alt={weatherData.description}
-            class="align-bottom"
+            className="align-bottom"
           />
           <span className="temperature">
             {Math.round(weatherData.temperature)}
@@ -74,8 +77,7 @@ export default function Weather() {
     );
   } else {
     const apiKey = "b40b135798f82a05aed08769f9275f50";
-    let city = "Brussels";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
     return (
