@@ -31,22 +31,43 @@
   line-height: 30px;
 }
 
+.Weather .conditions ul {
+  margin-top: 30px;
+  padding-right: 20px;
+}
+
+.Weather .conditions li {
+  font-size: 18px;
+  line-height: 24px;
+  text-align: end;
+}
+
+.Weather .current-weather {
+  padding-bottom: 30px;
+  margin-left: -30px;
+}
+
 .Weather img {
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
   margin-right: 10px;
   margin-left: 20px;
 }
 
 .Weather .temperature {
   font-weight: bold;
-  font-size: 80px;
+  font-size: 120px;
   line-height: 64px;
 }
 
 .Weather .unit {
-  font-size: 20px;
+  font-size: 26px;
+  font-weight: 300;
   position: relative;
-  top: -36px;
+  top: -56px;
   line-height: 1;
+}
+
+.Weather h3 {
+  padding: 10px 10px 0;
 }
