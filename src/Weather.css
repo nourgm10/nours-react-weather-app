@@ -32,8 +32,7 @@
 }
 
 .Weather .conditions ul {
-  margin-top: 30px;
-  padding-right: 20px;
+  padding-right: 30px;
 }
 
 .Weather .conditions li {
@@ -44,14 +43,13 @@
 
 .Weather .current-weather {
   padding-bottom: 30px;
-  margin-left: -30px;
+  margin: 20px 0 0 -30px;
 }
 
-.Weather img {
+.Weather canvas {
   height: 100px;
   width: 100px;
-  margin-right: 10px;
-  margin-left: 20px;
+  margin: 0 10px -10px 20px;
 }
 
 .Weather .temperature {
