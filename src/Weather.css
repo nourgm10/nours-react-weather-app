@@ -1,3 +1,52 @@
 .Weather {
-  border: 1px solid #dadde1;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.Weather form input:focus {
+  border-color: black;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+.Weather h1 {
+  display: block;
+  font-size: 48px;
+  font-weight: 800;
+  height: 26px;
+  line-height: 30px;
+  margin: 30px 0 12px 0;
+  padding-left: 20px;
+}
+
+.Weather ul {
+  padding-left: 20px;
+}
+
+.Weather li {
+  list-style: none;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.Weather img {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+.Weather .temperature {
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 64px;
+}
+
+.Weather .unit {
+  font-size: 20px;
+  position: relative;
+  top: -36px;
+  line-height: 1;
 }
