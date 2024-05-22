@@ -16,7 +16,7 @@ export default function WeatherInfo(props) {
       <div className="row mt-3 align-items-center">
         <div className="col-6">
           <div className="current-weather text-center align-baseline">
-            <WeatherIcon code={props.data.icon} />
+            <WeatherIcon code={props.data.icon} size={100} />
             <WeatherTemperature celsius={props.data.temperature} />
           </div>
         </div>
