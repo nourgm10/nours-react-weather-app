@@ -8,7 +8,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Weather defaultCity="Paris" />
-        <footer>
+        <footer class="fixed-bottom text-center">
           This project was coded by{" "}
           <a
             href="https://www.linkedin.com/in/nourlivia/"
